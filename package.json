@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "walletsApp",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "1.0.0",
+  "description": "Client app for wallets management.",
+  "repository": "https://github.com/matteobovetti/walletsApp",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
