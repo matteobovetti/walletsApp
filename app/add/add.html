@@ -1,0 +1,117 @@
+<div class="container-fluid">
+<!--
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<div class="{{statusclass}}" role="alert" ng-show="statusshow">
+				{{statustext}} <span class="badge">{{movement_number_badge}}</span>
+			</div>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+-->
+	<form>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				<div class="form-group">
+					<label>Movement type</label>
+					<div class="radio">
+						<label class="radio-inline">
+							<input id="inputcost" type="radio" name="cost" value="cost" ng-model="cost">
+							Cost
+						</label>
+						<label class="radio-inline">
+							<input id="inputcost" type="radio" name="cost" value="income" ng-model="cost">
+							Income
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-3">
+				<label for="inputdate">Date</label>
+				<div class="input-group">
+					<input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" 
+						   ng-model="movement.date" is-open="opened" datepicker-options="dateOptions" 
+						   ng-required="true" close-text="Close" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+					</span>
+				</div>
+			</div>
+			<div class="col-md-3">
+
+				<div class="form-group">
+					<label for="inputamount">Amount</label>
+					<div class="input-group">
+						<div class="input-group-addon">€</div>
+						<input type="number" class="form-control" id="inputamount" placeholder="Amount" ng-model="movement.amount">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="inputdescription">Description</label>
+					<input type="text" class="form-control" id="inputdescription" placeholder="Description" ng-model="movement.description">
+				</div>
+				<div class="form-group">
+					<label for="inputtags">Tags</label>
+					<div class="input-group">
+						<div class="input-group-addon">#</div>
+						<input type="text" class="form-control" id="inputtags" placeholder="Tags" ng-model="movement.tags">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label for="inputpou">PoU</label>
+					<div class="input-group">
+						<input type="number" class="form-control" id="inputpou" placeholder="Percent of utility" ng-model="movement.PoU">
+						<div class="input-group-addon">%</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputfrequency">Frequency</label>
+					<input type="number" class="form-control" id="inputfrequency" placeholder="Frequency" ng-model="movement.frequency">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label for="inputwallet">Wallet</label>
+					<input type="text" class="form-control" id="inputwallet" placeholder="Wallet" ng-model="movement.wallet">
+				</div>
+				<div class="form-group">
+					<label for="inputfrequencytype">Frequency Type</label>
+					<select class="form-control" id="inputfrequencytype" placeholder="Frequency Type" ng-model="movement.frequencytype">
+						<option value="d">Daily</option>
+						<option value="w">Weekly</option>
+						<option value="m">Mountly</option>
+						<option value="y">Yearly</option>
+						<option value="f">Fixed</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				<button type="button" class="btn btn-primary" ng-click="add()"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
+			</div>
+		</div>
+	</form>
+</div>

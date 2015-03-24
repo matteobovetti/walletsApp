@@ -1,0 +1,79 @@
+<div class="container-fluid">
+
+    <form>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="inputyears">Years</label>
+                    <select class="form-control" id="inputyears" placeholder="Years" ng-model="year_selected" ng-change="getMovemenets()">
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="inputmonth">Months</label>
+                    <select class="form-control" id="inputmonth" placeholder="Months" ng-model="month_selected" ng-change="getMovemenets()">
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="5">Apr</option>
+                        <option value="4">May</option>
+                        <option value="6">Jun</option>
+                        <option value="6">Jun</option>
+                        <option value="7">Jul</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="inputmonth">Search</label>
+                    <input class="form-control" type="text" ng-model="query" placeholder="find something?" title="Find" style="margin-bottom:20px;">
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <tr>
+                    <th>Action</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Tags</th>
+                    <th>Wallet</th>
+                    <th>PoU (%)</th>
+                    <th>Frequency Type</th>
+                    <th>Frequency</th>
+                </tr>
+                <tr ng-repeat="mov in movements | filter:query">
+                    <td>
+                        <a href="#/update/{{mov._id}}" class="btn btn-primary btn-sm" title="Update"><span class="glyphicon glyphicon-edit"></span></a>
+                        <button type="button" ng-click="delete(mov._id)" class="btn btn-danger btn-sm" title="Delete">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                    <td>{{mov.date | date:'dd-MM-yyyy'}}</td>
+                    <td>{{mov.description}}</td>
+                    <td ng-class="mov.amount >= 0 ? 'success' : 'danger'">{{mov.amount}}</td>
+                    <td>{{mov.tags}}</td>
+                    <td>{{mov.wallet}}</td>
+                    <td>{{mov.PoU}}</td>
+                    <td>{{mov.frequencytype}}</td>
+                    <td>{{mov.frequency}}</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+</div>
