@@ -1,3 +1,3 @@
 # walletsApp
 
-Client app for wallets management.
+AngularJS app for wallets management.
