@@ -35,11 +35,8 @@ angular.module('walletsApp.movements', ['ngRoute'])
 
 	$scope.delete = function(id) {
 
-		console.log(id);
-
 		$http.delete('/movement/' + id).
 		success(function(data, status, headers, config) {
-			console.log('200 OK');
 			$scope.getMovemenets();
 		}).
 		error(function(data, status, headers, config) {
