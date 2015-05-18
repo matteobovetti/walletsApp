@@ -17,23 +17,23 @@ angular.module('walletsApp.statistics', ['ngRoute'])
     $scope.total_income = 0;
     $scope.percentage_cost_income = 0;
     $scope.difference_cost_income = 0;
-    $scope.total_yearly_cost = 0;
-    $scope.total_yearly_income = 0;
+    $scope.total_fixed_cost = 0;
+    $scope.total_fixed_income = 0;
 
     $scope.getStatistics = function() {
 
         $scope.total_cost = 0;
         $scope.total_income = 0;
-        $scope.total_yearly_cost = 0;
-        $scope.total_yearly_income = 0;
+        $scope.total_fixed_cost = 0;
+        $scope.total_fixed_income = 0;
 
         $http.get('/statistics?y=' + $scope.year_selected + '&m=' + $scope.month_selected).
         success(function(data, status, headers, config) {
 
             $scope.total_cost = data.total_cost;
             $scope.total_income = data.total_income;
-            $scope.total_yearly_cost = data.total_yearly_cost;
-            $scope.total_yearly_income = data.total_yearly_income;
+            $scope.total_fixed_cost = data.total_fixed_cost;
+            $scope.total_fixed_income = data.total_fixed_income;
             $scope.percentage_cost_income = data.percentage_cost_income;
             $scope.difference_cost_income = data.difference_cost_income;
 
