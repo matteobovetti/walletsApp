@@ -92,7 +92,10 @@
 			<div class="col-md-3">
 				<div class="form-group">
 					<label for="inputwallet">Wallet</label>
-					<input type="text" class="form-control" id="inputwallet" placeholder="Wallet" ng-model="movement.wallet">
+					<select class="form-control" id="inputwallet" placeholder="Wallet" ng-model="movement.wallet">
+						<option value="home">Home</option>
+						<option value="technology">Technology</option>
+					</select>
 				</div>
 				<div class="form-group">
 					<label for="inputfrequencytype">Frequency Type</label>

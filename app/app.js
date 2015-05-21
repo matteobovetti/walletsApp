@@ -24,8 +24,8 @@ function Movement() {
     this.description = '';
     this.amount = 0.0;
     this.tags = '';
-    this.wallet = "home";
+    this.wallet = 'home';
     this.PoU = 100.0;
-    this.frequencytype = "m";
+    this.frequencytype = 'm';
     this.frequency = 1;
 }

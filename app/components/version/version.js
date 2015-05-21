@@ -5,4 +5,4 @@ angular.module('walletsApp.version', [
   'walletsApp.version.version-directive'
 ])
 
-.value('version', '1.0');
+.value('version', '1.1');

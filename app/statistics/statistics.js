@@ -13,6 +13,8 @@ angular.module('walletsApp.statistics', ['ngRoute'])
 
     $scope.year_selected = moment().year();
     $scope.month_selected = moment().month() + 1;
+    $scope.wallet = 'home';
+    
     $scope.total_cost = 0;
     $scope.total_income = 0;
     $scope.percentage_cost_income = 0;
@@ -27,7 +29,7 @@ angular.module('walletsApp.statistics', ['ngRoute'])
         $scope.total_fixed_cost = 0;
         $scope.total_fixed_income = 0;
 
-        $http.get('/statistics?y=' + $scope.year_selected + '&m=' + $scope.month_selected).
+        $http.get('/statistics?y=' + $scope.year_selected + '&m=' + $scope.month_selected + '&w=' + $scope.wallet).
         success(function(data, status, headers, config) {
 
             $scope.total_cost = data.total_cost;
